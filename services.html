@@ -7,7 +7,8 @@
   <!-- for google font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
  
@@ -15,7 +16,7 @@
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/gallery.css">
-  <title>Services - EDC FPN0</title>
+  <title>Services TEDC - FEDERAL POLYTECHNIC NEKEDE</title>
 </head>
 <body>
   
@@ -24,29 +25,54 @@
   <header>
     <div class="brand">
       <a href="index.html">
-        <!-- <img src="images/dunav logo.svg" alt=""> -->
-        <span class="logo">EDC</span>
-        <span class="mobile-logo"> FedpoNek</span>
+        <img src="images/nekedelogo.png" alt="">
       </a>
     </div>
 
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
+      <i class="fa-solid fa-bars fa-2x " style="color: #ffff"></i>
     </div>
 
     <nav id="js-navbar" >
       <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
+        <i class="fa-solid fa-xmark fa-3x" style="color: #ffff;" ></i>
       </div>
       <ul id="navbar">
         <li><a href="index.html">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/services.html" id="product-link" class="active"> Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" id="product-link" class="active"> Skills</a></li>
         <li><a href="gallery.html" id="product-link">Gallery</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
+
+        <button id="js-sign-in-mobile"  class="cta-sign-in-mobile">Sign In</button>
+
+        <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
+
       </ul>
     </nav>
+
+    <button id="js-sign-in" class="cta-sign-in">Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+          <p id="js-user-dispaly-fullname"></p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email"></p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -61,36 +87,11 @@
     <!-- Features Services Section -->
     <section class="features-container">
       <div class="features-contents">
-        <h2>Training and Skill Services</h2>
-        <p class="features-p">Our center provides an extensive array of hands-on skills development and services aimed at equipping students for successful entrepreneurship across multiple disciplines.</p>
+        <h2>Skills Training & Services</h2>
+        <p class="features-p">Our center offers a wide range of practical skills training and services designed to prepare students for successful entrepreneurship in various fields.</p>
       </div>
 
-      <div class="features-cards">
-        <div class="card1">
-          <div class="icon-div">
-            <i class="fa-solid fa-code"></i>
-          </div>
-          <h3>Digital Skills Training</h3>
-          <p>Learn modern digital skills including web development, digital marketing, and data analysis to succeed in today's digital economy.
-          </p>
-        </div>
 
-        <div class="card2">
-          <div class="icon-div">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <h3>Business Management</h3>
-          <p>Master the essentials of business management, including planning, marketing, accounting, and operational strategies.</p>
-        </div>
-
-        <div class="card3">
-          <div class="icon-div">
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <h3>Entrepreneurship Workshops</h3>
-          <p>Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
-        </div>
-      </div>
 
       <div class="features-cards">
         <div class="card1">
@@ -120,31 +121,11 @@
         </div>
       </div>
 
-      <div class="features-cards">
-        <div class="card1">
-          <div class="icon-div">
-            <i class="fa-solid fa-pen-nib"></i>
-          </div>
-          <h3>Graphic Design</h3>
-          <p>Master graphic design skills using industry-standard tools to create logos, UI/UX designs, and visual branding assets.
-          </p>
-        </div>
+      <div class="features-cards"  id="skills-list">
+      </div>
 
-        <div class="card2">
-          <div class="icon-div">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <h3>Photography & Videography</h3>
-          <p>Learn professional photography and videography techniques for product photography, marketing videos, and digital content creation.</p>
-        </div>
-
-        <div class="card3">
-          <div class="icon-div">
-            <i class="fa-solid fa-network-wired"></i>
-          </div>
-          <h3>Market Research</h3>
-          <p>Develop skills in market research, data collection, consumer behavior analysis, and competitive research to identify business opportunities.</p>
-        </div>
+      <div class="add-skill-div">
+        <button id="js-add-skill">Add Skill </button>
       </div>
     </section>
 
@@ -153,37 +134,49 @@
       <div class="why-choose-us-row">
         <div class="why-choose-us-col why-choose-us-contents">
           <h2>
-            Our Training Strategy
+            Our Training Approach
           </h2>
 
           <p class="p-why-choose-us" >
-            At the Entrepreneurship Development Center, we advocate for an experiential, hands-on learning style that readies students for genuine business challenges. Our method integrates theoretical concepts with practical experiences, ensuring that graduates are adequately prepared to launch and expand successful enterprises.
+            At the Entrepreneurship Development Center, we believe in a practical, hands-on approach to learning that prepares students for real-world business challenges. Our approach combines theoretical knowledge with practical applications, ensuring graduates are well-equipped to start and grow successful ventures.
           </p>
 
           <div class="reasons-div">
+            <div class="icon-div">
+              <i class="fa-solid fa-1"></i>
+            </div>
             <div class="reasons-contents">
-              <h4>Concepts & Basics</h4>
+              <h4>Theory & Fundamentals</h4>
               <p>Building strong foundational knowledge through expert-led classes and comprehensive learning materials..</p>
             </div>
           </div>
 
           <div class="reasons-div">
+            <div class="icon-div">
+              <i class="fa-solid fa-2"></i>
+            </div>
             <div class="reasons-contents">
-              <h4>Interactive Workshops</h4>
+              <h4>Practical Workshops</h4>
               <p>Hands-on sessions where students apply theoretical knowledge through real-world projects and exercises.</p>
             </div>
           </div>
 
           <div class="reasons-div">
+            <div class="icon-div">
+              <i class="fa-solid fa-3"></i>
+            </div>
             <div class="reasons-contents">
-              <h4>Coaching & Support</h4>
+              <h4>Mentorship & Guidance</h4>
               <p>One-on-one support from industry professionals and experienced entrepreneurs to guide student progress.</p>
             </div>
           </div>
 
           <div class="reasons-div">
+            <div class="icon-div">
+              <i class="fa-solid fa-4"></i>
+            </div>
             <div class="reasons-contents">
-              <h4>Entrepreneurship Development</h4>
+              <h4>Business Incubation</h4>
               <p>port for promising business ideas through resource access, networking, and growth opportunities.</p>
             </div>
           </div>
@@ -208,15 +201,122 @@
       </div>
     </section>
     
+
+    <!-- overlay add skill  -->
+
+    <div class="add-skill-overlay" id="js-popup">
+      <div class="overlay-container">
+        <div class="overlay-header">
+          <h3>Add New Skill</h3>
+          <i class="fa-solid fa-xmark" id="js-close-icon"></i>
+        </div>
+
+        <form id="add-skills-form" class="skill-form">
+          <div class="skill-title-div">
+            <label>Select a skill*</label>
+            <select id="skill-select">
+              <option value="Hospitality & Catering">Hospitality & Catering</option>
+              <option value="Spice Production">Spice Production</option>
+              <option value="Electrical Installation">Electrical Installation</option>
+              <option value="Tv Satelite Installation & Maintenance">Tv Satelite Installation & Maintenance</option>
+              <option value="Binding & Lithography">Binding & Lithography</option>
+              <option value="Screen Printing">Screen Printing</option>
+              <option value="Computer Networking">Computer Networking</option>
+              <option value="Generator Repair/Maintenance">Generator Repair/Maintenance</option>
+              <option value="Computer Maintenance">Computer Maintenance</option>
+              <option value="Fabric Design/Tie& Dye Batrik">Fabric Design/Tie& Dye Batrik</option>
+              <option value="Computer Dided Design">Computer Dided Design</option>
+              <option value="Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance">Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance</option>
+              <option value="Animal Health and Production Technology">Animal Health and Production Technology</option>
+              <option value="Cosmetology, Chemical & Allied Products">Cosmetology, Chemical & Allied Products</option>
+              <option value="Leather Works">Leather Works</option>
+              <option value="Polish Production">Polish Production</option>
+              <option value="CCTV/Security Camera/Networking">CCTV/Security Camera/Networking</option>
+              <option value="Foam Production">Foam Production</option>
+              <option value="Electronics Maintenance">Electronics Maintenance</option>
+              <option value="Airconditioning/Refrigeration Repair">Airconditioning/Refrigeration Repair</option>
+              <option value="Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator">Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator</option>
+              <option value="Phone Repair/Maintenance">Phone Repair/Maintenance</option>
+              <option value="Photograph & Video Coverage">Photograph & Video Coverage</option>
+              <option value="Barbing">Barbing</option>
+              <option value="Music -Entertainment (Rapping/MC/DJ)">Music -Entertainment (Rapping/MC/DJ)</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Fresh Fruit Juice Production">Fresh Fruit Juice Production</option>
+              <option value="Ice Cream">Ice Cream</option>
+              <option value="Beverage Production">Beverage Production</option>
+              <option value="Ceramics Production">Ceramics Production</option>
+              <option value="Nylon Production">Nylon Production</option>
+              <option value="Solar Panel Installation">Solar Panel Installation</option>
+              <option value="Battery Cage Production">Battery Cage Production</option>
+              <option value="Flour Production & Processing">Flour Production & Processing</option>
+              <option value="Confectionaries">Confectionaries</option>
+              <option value="Bread Production">Bread Production</option>
+              <option value="Bead Making/Knitting">Bead Making/Knitting</option>
+              <option value="Automobile Maintenance Using Modern Tech">Automobile Maintenance Using Modern Tech</option>
+              <option value="Auto Security Tracking">Auto Security Tracking</option>
+              <option value="Fashion Design/Tailoring">Fashion Design/Tailoring</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Web Design, Hosting">Web Design, Hosting</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Paint Production">Paint Production</option>
+              <option value="Web & Mobile App">Web & Mobile App</option>
+            </select>
+          </div>
+
+          <div class="skill-fullname-div">
+            <label>Fullname*</label>
+            <input type="text" placeholder="fullname" id="fullname">
+          </div>
+
+          <div class="skill-department-div">
+            <label>Department*</label>
+            <input type="text" placeholder="Department" id="department">
+          </div>
+
+          <div class="skill-number-div">
+            <label>Phone Number*</label>
+            <input type="text" placeholder="Phone Number" id="phone-number">
+          </div>
+
+          <div class="skill-description-div">
+            <label>Description*</label>
+            <textarea id="description-inp" placeholder="Describe your skill and experienced"></textarea>
+          </div>
+
+          <div class="skill-icon-div">
+            <label>Icon*</label>
+            <select id="icon-select">
+              <option value="fa-solid fa-code">Code</option>
+              <option value="fa-solid fa-paint-brush">Briefcase</option>
+              <option value="fa-solid fa-chart-line">Design</option>
+              <option value="fa-solid fa-utensils">Hospitality </option>
+              <option value="fa-solid fa-pepper-hot">Spice Production</option>
+              <option value="fa-solid fa-bolt">Electrical Installation</option>
+              <option value="fa-solid fa-satellite">Satelite Installation</option>
+              <option value="fa-solid fa-book">Binding </option>
+              <option value="fa-solid fa-print">Printing </option>
+              <option value="fa-solid fa-network-wired">Networking </option>
+              <option value="fa-solid fa-cog">Repair/Maintenance </option>
+              <option value="fa-solid fa-laptop-medical">Computer Maintenance </option>
+              <option value="fa-solid fa-tshirt">Fabric Design </option>
+              <option value="fa-solid fa-computer">Computer Design </option>
+              <option value="fa-solid fa-tree">Land Scaping </option>
+            </select>
+          </div>
+
+          <button type="submit">Save Skill</button>
+        </form>
+      </div>
+    </div>
   </main>
 
   <!-- footer section of this page  -->
   <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
-        <h1> 
-        EDC FedpoNek
-        </h1>
+        <a href="index.html">
+          <img src="images/nekedelogo.png" alt="">
+        </a>
         <p class="footer-contact-p">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
         </p>
@@ -227,22 +327,22 @@
           Quick Links
         </h1>
         <p class="footer-contact-p">
-          <a href="/index.html"> Home</a>
+          <a href="index.html"> Home</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/about.html"> About Us</a>
+          <a href="about.html"> About Us</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/services.html"> Services</a>
+          <a href="services.html"> Skills</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/gallery.html"> Gallery</a>
+          <a href="gallery.html"> Gallery</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/faq.html"> FAQ</a>
+          <a href="faq.html"> FAQ</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/contact.html"> Contact</a>
+          <a href="contact.html"> Contact</a>
         </p>
       </div>
 
@@ -281,13 +381,13 @@
         <p class="footer-contact-p">
           <div class="footer-contact-div">
             <i class="fa-solid fa-phone"></i>
-            <p>+234 900 000 0000 </p>
+            <p>+234 803 356 6372</p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
             <i class="fa-solid fa-message"></i>
-            <p>contact@edcfpno.edu.ng</p>
+            <p>contactedcdirector@fedponek.edu.ng</p>
           </div>
         </p>
       </div>
@@ -298,11 +398,13 @@
     <hr style="width: 100%;">
     <div class="copyright-div">
       <p class="copyright">
-        © 2025 | All rights reserved.
+        © 2025 Entrepreneurship Development Center, Federal Polytechnic Nekede. All rights reserved.
       </p>
     </div>
   </footer>
 
   <script src="scripts/navbar.js"></script>
+  <script src="scripts/skills.js"></script>
+  <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

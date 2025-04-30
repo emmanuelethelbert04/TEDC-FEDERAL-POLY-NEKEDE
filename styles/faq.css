@@ -6,8 +6,8 @@
 :root{
   --color: #34495E ;
   --bg: #F4F6F6 ;
-  --banner-color: #2e3a6e;
-  --font: "Ubuntu", sans-serif;
+  --banner-color: hsl(221, 83%, 53%) ;
+  --font: "Roboto", sans-serif;
 }
 html,
 body{

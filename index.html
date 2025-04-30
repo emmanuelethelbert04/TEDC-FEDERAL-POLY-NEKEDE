@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EDC FPN0</title>
-  <link rel="icon" href="images/dunav logo.svg" type="image/x-icon">
+  <title>TEDC - FEDERAL POLYTECHNIC NEKEDE</title>
+  <link rel="icon" href="images/nekedelogo.png" type="image/x-icon">
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/swiper.css">
 
   <!-- for google font  -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -31,17 +31,28 @@
       color: white;
       /* position: absolute; */
       /* margin-top: 600px; */
+      overflow: hidden;  
+      position: relative;
     }
+
+    .swiper-wrapper {  
+      display: flex;  
+      width: 600%;
+      transition: transform 0.6s ease;  
+      height: 100%;  
+    } 
 
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      /* background: #fff0; */
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
+      transition: transform 0.6s ease;  
+      position: relative;  
+
     }
 
     .swiper-slide img {
@@ -53,10 +64,10 @@
 
     @media only screen and (max-width: 768px) {
       /* homepg */
-      /* .swiper-slide h2 {
+      .swiper-slide h2 {
         text-align: center;
         font-size: 30px;
-      } */
+      }
     }
   </style>
 
@@ -68,30 +79,59 @@
   <header>
     <div class="brand">
       <a href="index.html">
-        <!-- <img src="images/dunav logo.svg" alt=""> -->
-        <span class="logo">EDC</span>
-        <span class="mobile-logo"> FPN0</span>
+        <img src="images/nekedelogo.png" alt="">
       </a>
     </div>
 
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
+      <i class="fa-solid fa-bars fa-2x " style="color: #ffff"></i>
     </div>
 
     <nav id="js-navbar" >
       <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
+        <i class="fa-solid fa-xmark fa-3x" style="color: #ffff;" ></i>
       </div>
       <ul id="navbar">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html" id="product-link"> Services</a></li>
+        <li><a href="services.html" id="product-link"> Skills</a></li>
         <li><a href="gallery.html" id="product-link">Gallery</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
+        
+
+        <button id="js-sign-in-mobile"  class="cta-sign-in-mobile">Sign In</button>
+
+        <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
+
       </ul>
     </nav>
-    
+
+    <button id="js-sign-in" class="cta-sign-in">Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+
+          <i class="fa-solid fa-user" 
+            style="font-size: 20px;">
+          </i>
+
+          <p id="js-user-dispaly-fullname"></p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email"></p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
   </header>
 
   <!-- main content of this work -->
@@ -100,65 +140,121 @@
     <section class="home-page">
       <!-- Swiper -->
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" >
-
-            <div style="width: 100%; height: 100%;"  class="vd-container" style="overflow: hidden;">
-              <img src="images/hero.jpg" alt="">
-              <!-- <video width="100%" height="100%"  autoplay loop>
-                <source  src="images/hero.mp4" type="video/mp4">  
-              </video> -->
-            </div>
+        <div class="swiper-wrapper" id="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/office.jpg" alt="" class="home-img">  
             
-
             <div class="overlay">
-              <h2 class="hero-h2">Welcome to EDC,
-                <br>
-                <span>Empowering Future Entrepreneurs At</span>
-                <br>
-                <span style="color: #ffc900">Federal Polytechnic Nekede</span>
-              </h2>
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/rectior2.jpg" alt="" class="home-img">  
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/serious1.jpg" alt="" class="home-img">  
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/seriuu.jpg" alt="" class="home-img">  
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/aa7.jpg" alt="" class="home-img">  
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="images/evening-block.jpg" alt="" class="home-img">  
+            
+            <div class="overlay">
+              <h2>Entrepreneurship Development Center <br>
+                <span style="background: #020d19;
+                background: linear-gradient(to right, #020d19 35%, #EE6B1F 65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;">Federal Polytechnic Nekede</span></h2>
+              <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+              <!-- <p> Owerri, Imo State</p> -->
+               <div class="btn-container">
+                <button class="js-abt" id="js-get-started">Get Started</button>
+               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-        
-    <!-- Why Choose us Section  -->
-    <section class="why-choose-us-container">
-      <div class="why-choose-us-row">
-        <div class="why-choose-us-col why-choose-us-contents">
-          <h2 >
-            Guiding Students Toward Successful Entrepreneurship
-          </h2>
-
-          <p class="p-why-choose-us" >
-            The Entrepreneurship Development Center at Federal Polytechnic Nekede is committed to cultivating entrepreneurial talent and equipping students with the practical skills needed for business success.
-          </p>
-          <br>
-          <br>
-          <button onclick="window.location.href='about.html'">Learn More</button>
-        </div>
-
-
-        <div class="why-choose-us-col">
-          <!-- <div class="refinery-img-div"> -->
-            
-            <div style="width: 100%;">
-              <img src="images/hero2.jpg" class="why-choose-us-img">
-          </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
+    <!-- Features Services Section -->
     <section class="features-container">
       <div class="features-contents">
-        <h2>Our Key Services</h2>
-        <p class="features-p">Explore the variety of skills and training programs available at the Entrepreneurship Development Center.</p>
+        <h2 id="f-heading">Our Features Services</h2>
+        <p class="features-p">Discover the range of skills and training programs offered at the Entrepreneurship Development Center.</p>
       </div>
 
       <div class="features-cards">
+
         <div class="card1">
           <div class="icon-div">
             <i class="fa-solid fa-book-open"></i>
@@ -183,11 +279,99 @@
           <h3>Entrepreneurship Workshops</h3>
           <p>Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
         </div>
+
       </div>
 
       <div class="services-link">
-        <a href="services.html">View All</a>
-        <!-- <i class="fa-solid fa-arrow-right" fill="#58b7ee"></i> -->
+        <a href="services.html">View All Skills</a>
+        <i class="fa-solid fa-arrow-right" fill="#58b7ee"></i>
+      </div>
+    </section>
+
+    
+    <!-- Why Choose us Section  -->
+    <section class="why-choose-us-container">
+      <div class="why-choose-us-row">
+        <div class="why-choose-us-col why-choose-us-contents">
+          <h2 >
+            Transforming Students into Successful Entrepreneurs
+          </h2>
+
+          <p class="p-why-choose-us" >
+            The Entrepreneurship Development Center at Federal Polytechnic Nekede is dedicated to nurturing entrepreneurial talents and providing students with practical skills for business success.
+          </p>
+
+          <div class="reasons-div">
+            <div class="icon-div">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <div class="reasons-contents">
+              <h4>Expert Instructors</h4>
+              <p>Learn from industry professionals and experienced entrepreneurs.</p>
+            </div>
+          </div>
+
+          <div class="reasons-div">
+            <div class="icon-div">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="reasons-contents">
+              <h4>Practical Training</h4>
+              <p>LHands-on experience through practical projects and real-world applications.</p>
+            </div>
+          </div>
+
+          <div class="reasons-div">
+            <div class="icon-div">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="reasons-contents">
+              <h4>Business Support</h4>
+              <p>Guidance on business planning, funding opportunities, and market entry strategies.</p>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <button onclick="window.location.href='about.html'">Learn More About Us</button>
+        </div>
+
+
+        <div class="why-choose-us-col image-div">
+          <div>
+            <img src="images/rector.jpg" alt="rector-image">
+            <p>
+              DR MRS. BASILIA IGBOKWE Rector Federal Polytechnic Nekede Owerri
+            </p>
+          </div>
+
+          <div>
+            <img src="images/eed-diretorate.jpg" alt="ict-directorate-image">
+
+            <p>Dr Peter Okoye Director Entrepreneurship Development Center Federal Polytechnic Nekede Owerri </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section four the surverqur page -->
+    <section class="surverqur">
+      <img src="images/poly-b.jpg" alt="">
+      <div class="resp-over-div">
+        <div class="overlay" id="surverqur-overlay">
+          <div class="contents">
+            <h2 class="contents-h2">
+              Ready to Start Your Entrepreneurial Journey?
+            </h2>
+            <p id="contents-p">
+            Join our programs and gain the skills, knowledge, and connections you need to transform your ideas into successful businesses.
+            </p> 
+          </div>
+          <div class="button-div">
+            <!-- <button onclick="alert('Create An Account to Get Started !')">Get Started Today</button> -->
+            <button onclick="window.location.href='gallery.html'">View Gallery</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -195,11 +379,11 @@
     <section class="support-container" id="contact">
       <div class="support-div">
         <h2>
-          Ready to Start Your Entrepreneurial Journey?
+          Do you have any questions or inquiry?
         </h2>
         <button onclick="window.location.href='contact.html'" >
           <!-- <img src="images/msg.png" alt="" width="15px"> -->
-          <span>Get Started</span>
+          <span>Contact Us</span>
         </button>
       </div>
     </section>
@@ -210,9 +394,9 @@
   <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
-        <h1 data-aos="fade-down"> 
-         EDC FPNO
-        </h1>
+        <a href="index.html">
+          <img src="images/nekedelogo.png" alt="">
+        </a>
         <p class="footer-contact-p">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
         </p>
@@ -229,7 +413,7 @@
           <a href="about.html"> About Us</a>
         </p>
         <p class="footer-contact-p">
-          <a href="services.html"> Services</a>
+          <a href="services.html"> Skills</a>
         </p>
         <p class="footer-contact-p">
           <a href="gallery.html"> Gallery</a>
@@ -277,13 +461,13 @@
         <p class="footer-contact-p">
           <div class="footer-contact-div">
             <i class="fa-solid fa-phone"></i>
-            <p>+234 900 000 0000 </p>
+            <p>+234 803 356 6372 </p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
             <i class="fa-solid fa-message"></i>
-            <p>contact@edcfpno.edu.ng</p>
+            <p>contactedcdirector@fedponek.edu.ng</p>
           </div>
         </p>
       </div>
@@ -294,33 +478,47 @@
     <hr style="width: 100%;">
     <div class="copyright-div">
       <p class="copyright">
-        © 2025 | All rights reserved.
+        © 2025 Entrepreneurship Development Center, Federal Polytechnic Nekede. All rights reserved.
       </p>
     </div>
   </footer>
 
 
   <script src="scripts/navbar.js"></script>
-  <script src="scripts/index.js"></script>
+  <script type="module" src="scripts/index.js"></script>
 
 
-  <!--Start of Tawk.to Script-->
   <script type="text/javascript">
+    const swiperWrapper = document.getElementById('swiper-wrapper');  
+    const totalSlides = swiperWrapper.children.length;  
+    let currentIndex = 0;  
+
+    function nextSlide() {  
+      currentIndex++;  
+      if (currentIndex >= totalSlides) {  
+        currentIndex = 0;  
+      }  
+      const translateXPercent = -(100 / totalSlides) * currentIndex;  
+      swiperWrapper.style.transform = `translateX(${translateXPercent}%)`;  
+    }  
+
+    // Change slide every 4 seconds  
+    setInterval(nextSlide, 4000);  
+
+    // <!--Start of Tawk.to Script-->
+    // <!--End of Tawk.to Script-->
+
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
-    s1.src='https://embed.tawk.to/67cc8dc96edcd71910a35623/1ilricrij';
+    s1.src='https://embed.tawk.to/680e64a6be6663190a6c0104/1ips3icbv';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
     })();
+
   </script>
-  <!--End of Tawk.to Script-->
 
-  <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
-
-  <div class="elfsight-app-52ec13b8-24dc-4194-9d05-109fa68e6cb7" data-elfsight-app-lazy></div>
 </body>
 </html>

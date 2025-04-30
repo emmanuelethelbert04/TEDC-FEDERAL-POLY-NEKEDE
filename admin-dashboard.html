@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="images/nekedelogo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+  <link rel="stylesheet" href="styles/admin.css">
+
+  <title>Admin Panel TEDC - FEDERAL POLYTECHNIC NEKEDE</title>
+</head>
+<body>
+  
+  <main>
+    <div class="admin-heading-container">
+      <h2>Admin Panel</h2>
+      <p class="subheading-p">Manage skills and gallery in your application.</p>
+      <a id="admin-sign-out" >Sign Out</a>
+    </div>
+    <div>
+    </div>
+
+    <!-- <div id="chart-container">
+      <canvas id="userChart"></canvas>
+    </div> -->
+
+    <!-- <div class="mobile-view-btn-div">
+      <button id="mobile-users-view">Skills</button>
+      <button id="mobile-tranc-view">Gallery</button>
+    </div> -->
+
+    <div class="container">
+      <div class="users-container">
+
+        <div class="users-head">
+          <div class="users-div">
+            <i class="fa-regular fa-setting" style="color: rgba(196,138,0,1); cursor: pointer;"></i>
+            <p>Skills</p>
+          </div>
+          <button class="add-btn">  
+            <i class="fa-light fa-plus" style="font-size: 16px;"></i>  
+            <p>Add a Skill</p>  
+          </button> 
+          
+        </div>
+
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>ICON</th>
+              <th class="created">TITLE</th>
+              <th>DESCRIPTION</th>
+            </tr>
+          </thead>
+
+          <tbody id="user-list">
+            <tr>
+              <td>
+                <div class="user-id">
+                  <i class="fa-regular fa-user" style="color: rgba(196,138,0,1);"></i>
+                </div>
+              </td>
+  
+              <td class="created">
+                <p>Web Development</p>
+              </td>
+
+              <td class="description">
+                <p>
+                  Building responsive and accessible web applications using modern frameworks and technologies.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- hidden overlays  -->
+    <div class="overlay" id="add-user-overlay" hidden style="display: none;">
+      <div class="add-user-container"  style="pointer-events: all;" >
+        <div class="add-header">
+          <h3>Add a New Skill</h3>
+          <i class="fa-solid fa-xmark" style="cursor: pointer;  pointer-events: all;" id="js-cancle-btn"></i>
+        </div>
+
+        <form id="add-user-form">
+          <div class="email-container">
+            <label>Select a skill*</label>
+            <select id="skill-select">
+              <option value="Hospitality & Catering">Hospitality & Catering</option>
+              <option value="Spice Production">Spice Production</option>
+              <option value="Electrical Installation">Electrical Installation</option>
+              <option value="Tv Satelite Installation & Maintenance">Tv Satelite Installation & Maintenance</option>
+              <option value="Binding & Lithography">Binding & Lithography</option>
+              <option value="Screen Printing">Screen Printing</option>
+              <option value="Computer Networking">Computer Networking</option>
+              <option value="Generator Repair/Maintenance">Generator Repair/Maintenance</option>
+              <option value="Computer Maintenance">Computer Maintenance</option>
+              <option value="Fabric Design/Tie& Dye Batrik">Fabric Design/Tie& Dye Batrik</option>
+              <option value="Computer Dided Design">Computer Dided Design</option>
+              <option value="Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance">Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance</option>
+              <option value="Animal Health and Production Technology">Animal Health and Production Technology</option>
+              <option value="Cosmetology, Chemical & Allied Products">Cosmetology, Chemical & Allied Products</option>
+              <option value="Leather Works">Leather Works</option>
+              <option value="Polish Production">Polish Production</option>
+              <option value="CCTV/Security Camera/Networking">CCTV/Security Camera/Networking</option>
+              <option value="Foam Production">Foam Production</option>
+              <option value="Electronics Maintenance">Electronics Maintenance</option>
+              <option value="Airconditioning/Refrigeration Repair">Airconditioning/Refrigeration Repair</option>
+              <option value="Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator">Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator</option>
+              <option value="Phone Repair/Maintenance">Phone Repair/Maintenance</option>
+              <option value="Photograph & Video Coverage">Photograph & Video Coverage</option>
+              <option value="Barbing">Barbing</option>
+              <option value="Music -Entertainment (Rapping/MC/DJ)">Music -Entertainment (Rapping/MC/DJ)</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Fresh Fruit Juice Production">Fresh Fruit Juice Production</option>
+              <option value="Ice Cream">Ice Cream</option>
+              <option value="Beverage Production">Beverage Production</option>
+              <option value="Ceramics Production">Ceramics Production</option>
+              <option value="Nylon Production">Nylon Production</option>
+              <option value="Solar Panel Installation">Solar Panel Installation</option>
+              <option value="Battery Cage Production">Battery Cage Production</option>
+              <option value="Flour Production & Processing">Flour Production & Processing</option>
+              <option value="Confectionaries">Confectionaries</option>
+              <option value="Bread Production">Bread Production</option>
+              <option value="Bead Making/Knitting">Bead Making/Knitting</option>
+              <option value="Automobile Maintenance Using Modern Tech">Automobile Maintenance Using Modern Tech</option>
+              <option value="Auto Security Tracking">Auto Security Tracking</option>
+              <option value="Fashion Design/Tailoring">Fashion Design/Tailoring</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Web Design, Hosting">Web Design, Hosting</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Paint Production">Paint Production</option>
+              <option value="Web & Mobile App">Web & Mobile App</option>
+            </select>
+          </div>
+
+          <div class="email-container">
+            <label>Fullname*</label>
+            <input type="text" placeholder="Enter fullname" id="fullName">
+          </div>
+
+          <div class="email-container">
+            <label>Department*</label>
+            <input type="text" placeholder="Enter Department" id="departMent">
+          </div>
+
+          <div class="email-container">
+            <label>Phone Number*</label>
+            <input type="text" placeholder="Enter Phone Number" id="number">
+          </div>
+
+          <div class="email-container">
+            <label>Description*</label>
+            <textarea id="description-inp" placeholder="Describe your skill and experienced"></textarea>
+          </div>
+
+          <div class="email-container">
+            <label>Icon*</label>
+            <select id="icon-select-skill">
+              <option value="fa-solid fa-code">Code</option>
+              <option value="fa-solid fa-paint-brush">Briefcase</option>
+              <option value="fa-solid fa-chart-line">Design</option>
+              <option value="fa-solid fa-utensils">Hospitality </option>
+              <option value="fa-solid fa-pepper-hot">Spice Production</option>
+              <option value="fa-solid fa-bolt">Electrical Installation</option>
+              <option value="fa-solid fa-satellite">Satelite Installation</option>
+              <option value="fa-solid fa-book">Binding </option>
+              <option value="fa-solid fa-print">Printing </option>
+              <option value="fa-solid fa-network-wired">Networking </option>
+              <option value="fa-solid fa-cog">Repair/Maintenance </option>
+              <option value="fa-solid fa-laptop-medical">Computer Maintenance </option>
+              <option value="fa-solid fa-tshirt">Fabric Design </option>
+              <option value="fa-solid fa-computer">Computer Design </option>
+              <option value="fa-solid fa-tree">Land Scaping </option>
+            </select>
+          </div>
+
+          <div class="btn-contianer">            
+            <button type="submit">Add a skill</button>
+            <button id="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div> 
+
+    <div class="overlay" id="update-skill-overlay" hidden>
+      <div class="add-user-container" style="pointer-events: all;">
+        <div class="add-header">
+          <h3>Edit a Skill</h3>
+          <i class="fa-solid fa-xmark" style="cursor: pointer;  pointer-events: all;" id="js-cancle-update-btn"></i>
+        </div>
+
+        <form id="update-skill-form" style="max-height: 400px; height: 100vh; overflow: auto;">
+          <div class="email-container">
+            <label> Skill Title</label>
+            <select id="js-user-title">
+              <option value="Hospitality & Catering">Hospitality & Catering</option>
+              <option value="Spice Production">Spice Production</option>
+              <option value="Electrical Installation">Electrical Installation</option>
+              <option value="Tv Satelite Installation & Maintenance">Tv Satelite Installation & Maintenance</option>
+              <option value="Binding & Lithography">Binding & Lithography</option>
+              <option value="Screen Printing">Screen Printing</option>
+              <option value="Computer Networking">Computer Networking</option>
+              <option value="Generator Repair/Maintenance">Generator Repair/Maintenance</option>
+              <option value="Computer Maintenance">Computer Maintenance</option>
+              <option value="Fabric Design/Tie& Dye Batrik">Fabric Design/Tie& Dye Batrik</option>
+              <option value="Computer Dided Design">Computer Dided Design</option>
+              <option value="Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance">Land Scaping: Floor treatment, Increte, Polishing, Kepe, Interlock, Floor Maintenance</option>
+              <option value="Animal Health and Production Technology">Animal Health and Production Technology</option>
+              <option value="Cosmetology, Chemical & Allied Products">Cosmetology, Chemical & Allied Products</option>
+              <option value="Leather Works">Leather Works</option>
+              <option value="Polish Production">Polish Production</option>
+              <option value="CCTV/Security Camera/Networking">CCTV/Security Camera/Networking</option>
+              <option value="Foam Production">Foam Production</option>
+              <option value="Electronics Maintenance">Electronics Maintenance</option>
+              <option value="Airconditioning/Refrigeration Repair">Airconditioning/Refrigeration Repair</option>
+              <option value="Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator">Hair Dressing, Preparation and Beauty Therapy/Hat making/Turban Fascinator</option>
+              <option value="Phone Repair/Maintenance">Phone Repair/Maintenance</option>
+              <option value="Photograph & Video Coverage">Photograph & Video Coverage</option>
+              <option value="Barbing">Barbing</option>
+              <option value="Music -Entertainment (Rapping/MC/DJ)">Music -Entertainment (Rapping/MC/DJ)</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Fresh Fruit Juice Production">Fresh Fruit Juice Production</option>
+              <option value="Ice Cream">Ice Cream</option>
+              <option value="Beverage Production">Beverage Production</option>
+              <option value="Ceramics Production">Ceramics Production</option>
+              <option value="Nylon Production">Nylon Production</option>
+              <option value="Solar Panel Installation">Solar Panel Installation</option>
+              <option value="Battery Cage Production">Battery Cage Production</option>
+              <option value="Flour Production & Processing">Flour Production & Processing</option>
+              <option value="Confectionaries">Confectionaries</option>
+              <option value="Bread Production">Bread Production</option>
+              <option value="Bead Making/Knitting">Bead Making/Knitting</option>
+              <option value="Automobile Maintenance Using Modern Tech">Automobile Maintenance Using Modern Tech</option>
+              <option value="Auto Security Tracking">Auto Security Tracking</option>
+              <option value="Fashion Design/Tailoring">Fashion Design/Tailoring</option>
+              <option value="Decoration /Event Management">Decoration /Event Management</option>
+              <option value="Web Design, Hosting">Web Design, Hosting</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Paint Production">Paint Production</option>
+              <option value="Web & Mobile App">Web & Mobile App</option>
+            </select>
+          </div>
+
+          <div class="email-container">
+            <label>Fullname*</label>
+            <input type="text" placeholder="Enter fullname" id="fullname">
+          </div>
+
+          <div class="email-container">
+            <label>Department*</label>
+            <input type="text" placeholder="Enter Department" id="department">
+          </div>
+
+          <div class="email-container">
+            <label>Phone Number*</label>
+            <input type="text" placeholder="Enter Phone Number" id="phone-number">
+          </div>
+
+          <div class="email-container">
+            <label> Skill Description</label>
+            <textarea type="text" style="height: 80px;" placeholder="Skill Description" id="js-user-description"></textarea>
+          </div>
+
+
+          <div class="remark-container">
+            <label> Icon</label>
+            <select id="icon-select">
+              <option value="fa-solid fa-code">Code</option>
+              <option value="fa-solid fa-paint-brush">Briefcase</option>
+              <option value="fa-solid fa-chart-line">Design</option>
+              <option value="fa-solid fa-utensils">Hospitality </option>
+              <option value="fa-solid fa-pepper-hot">Spice Production</option>
+              <option value="fa-solid fa-bolt">Electrical Installation</option>
+              <option value="fa-solid fa-satellite">Satelite Installation</option>
+              <option value="fa-solid fa-book">Binding </option>
+              <option value="fa-solid fa-print">Printing </option>
+              <option value="fa-solid fa-network-wired">Networking </option>
+              <option value="fa-solid fa-cog">Repair/Maintenance </option>
+              <option value="fa-solid fa-laptop-medical">Computer Maintenance </option>
+              <option value="fa-solid fa-tshirt">Fabric Design </option>
+              <option value="fa-solid fa-computer">Computer Design </option>
+              <option value="fa-solid fa-tree">Land Scaping </option>
+            </select>
+          </div>
+
+          <div class="btn-contianer" style="justify-content: space-between; flex-direction: row;">
+            <button style="background-color: red; color: white;" id="delete-btn">
+              <i class="fa-solid fa-trash-can"></i>
+              Delete SKill
+            </button>
+
+            <div style="display:flex; justify-content: space-between; flex-direction: row-reverse; column-gap: 10px;">
+              <button type="submit">Update Skill</button>
+              <!-- <button id="update-user-cancel-btn">Cancel</button> -->
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div> 
+
+    <div class="overlay" id="delete-user-overlay" hidden style="display: none; height: 100vh;">
+      <div class="add-user-container" style="height: 250px; margin: 100px 0; pointer-events: all;">
+        <div class="add-header" id="hd-fr-delete">
+          <h3>Are you absolutely sure ?</h3>
+        </div>
+
+        <p style="font-family: 'Roboto', sans-serif; font-size: 16px; font-style: normal; font-weight: 400;">This action can not be undone. This will permanently delete user and associated data.</p>
+
+        <div class="btn-contianer" style="justify-content: flex-end; flex-direction: row; margin-top: 20px;">
+          <div style="display:flex; justify-content: space-between; flex-direction: row-reverse; column-gap: 10px;">
+            <button style="background-color: red; color: white;" id="js-delete-user">
+              <i class="fa-solid fa-trash-can"></i>
+              Delete User
+            </button>
+            <button id="delete-user-cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </main>
+
+  <script type="module" src="scripts/admin.js"></script>
+  <script type="module" src="scripts/firebase.js"></script>
+</body>
+</html>
