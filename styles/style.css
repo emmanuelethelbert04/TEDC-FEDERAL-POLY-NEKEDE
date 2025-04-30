@@ -205,7 +205,7 @@ button:active{
 .support-container,
 .footer-container,
 .features-container{
-  padding: 4rem 4rem;
+  padding: 4rem 5rem;
   width: 100%;
 }
 .features-container h2{
@@ -347,9 +347,9 @@ button:active{
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  row-gap: 30px;
-  column-gap: 30px;
+  /* flex-wrap: wrap; */
+  /* row-gap: 30px; */
+  column-gap: 35px;
   margin-bottom: 40px;
 }
 .card1,
@@ -362,6 +362,7 @@ button:active{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
   row-gap: 15px;
 }
 .card1 h3,
